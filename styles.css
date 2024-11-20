@@ -1,0 +1,510 @@
+/* General styling */
+body {
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    background-image: url('images/logo3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-position: center;
+    background-attachment: fixed;
+  
+
+
+}
+
+
+/* General container styling */
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the two sections */
+    gap: 20px;
+}
+
+/* Style the left section */
+.left {
+    flex: 1;
+    /* Left section takes up 50% or more of the container */
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Optional: Set a background */
+    opacity: 0.962;
+}
+
+/* Style the right section */
+.right {
+    flex: 1;
+    /* Right section takes up 50% or more of the container */
+    padding: 20px;
+    background-color: #e0e0e0;
+    /* Optional: Set a background */
+    opacity: 0.85;
+    
+}
+
+/* Optional: Add some responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Stack sections on top of each other on smaller screens */
+    }
+}
+
+.form-image {
+    width: 100%;
+    /* Makes the image fit the container's width */
+    height: auto;
+    /* Maintains aspect ratio */
+    border-radius: 8px;
+    /* Optional: to match the container’s rounded corners */
+    margin-bottom: 20px;
+    /* Adds space between image and header */
+}
+
+/* Header */
+h1,
+h3 {
+    text-align: center;
+}
+
+/* Form container stacked vertically */
+.form-container {
+    display: block;
+}
+
+/* Basic Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.floating-label-container {
+    position: relative;
+}
+
+.form-control {
+    width: 90%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Label Styling */
+.floating-label-container label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease all;
+}
+
+/* Style for Larger Text Area */
+.large-text {
+    min-height: 90px;
+    /* Makes description field larger */
+    resize: vertical;
+    /* Allows users to adjust height */
+}
+
+/* Input Focus Effects */
+.form-control:focus,
+.dropdown-search:focus,
+.currency-search:focus
+{
+    border-color: green;
+    box-shadow: 0 0 5px green;
+}
+
+.form-control:focus+label,
+.form-control:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    color: green;
+}
+
+
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown button styling */
+.dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #0b8013;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+/* Basic styles for dropdown and arrow */
+.dropdown-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    /* Add a smooth transition effect */
+}
+
+.dropdown-menu {
+    display: none;
+    /* Hide the dropdown menu initially */
+    max-width: 300px;
+}
+
+.dropdown-menu.show {
+    display: block;
+    /* Show the dropdown menu when the "show" class is added */
+}
+
+/* Rotate the arrow when the dropdown is open */
+.dropdown-arrow.rotate {
+    transform: rotate(180deg);
+    /* Rotate 180 degrees */
+}
+
+
+.dropdown-btn:hover {
+    background-color: #19561c;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu label {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menu label:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styling for the custom dropdown and its components */
+.dropdown-search {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.dropdown-list {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    width: 30%;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 150px;
+    max-width: 330px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.currency-option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Remove focus outline */
+#currency-search:focus {
+    outline: none;
+    border: 1px solid #ccc; /* Optional: add a custom border style if you prefer */
+}
+
+
+/* Show the dropdown when the user types */
+.dropdown-list.open {
+    display: block;
+}
+
+/* Style the Done button */
+.done-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    /* Initially hidden */
+}
+
+/* Optional: Add hover effect to the Done button */
+.done-btn:hover {
+    background-color: #45a049;
+}
+
+/* Action Buttons (reduced size, icons, and layout) */
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #0b8013;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.action-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.action-btn:hover {
+    background-color: #19561c;
+}
+
+/* Styling for the currency search input */
+#currency-search {
+    width: 50%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+
+/* Ensure dropdown menu is large enough to fit all options */
+#sales-dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 100;
+    min-width: 200px; /* Ensure the dropdown has a min-width */
+    max-height: auto; /* Limit the height to avoid long dropdowns */
+    overflow-y: auto; /* Enable scrolling if options overflow */
+}
+
+/* Space out the items a little more */
+#sales-dropdown-menu label {
+    display: block;
+    margin-bottom: 8px; /* Add space between each option */
+}
+
+/* Ensure the "Done" button is at the bottom */
+.done-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px; /* Add space between options and the Done button */
+}
+
+/* Style the button when hovered */
+.done-btn:hover {
+    background-color: #45a049;
+}
+
+/* For better visibility of the dropdown button */
+#sales-dropdown-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #0b8013;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px; /* Space between this and the next element */
+    opacity: 0.9;
+}
+
+#sales-dropdown-btn:hover {
+    background-color: #19561c; /* Darker green color on hover */
+}
+/* Initial state of the sales dropdown arrow (down) */
+.sales-dropdown-arrow {
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+/* Rotate the sales arrow when the sales dropdown menu is shown */
+#sales-dropdown-btn.open .sales-dropdown-arrow {
+    transform: rotate(180deg); /* Rotate arrow 180 degrees */
+}
+
+#sales-dropdown-menu {
+    background-color: white; /* Slightly transparent black */
+    opacity: 0.93;
+    padding: 10px; /* Optional: Add some padding for better spacing */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow for better visibility */
+}
+
+
+
+
+/* Notification styling */
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    /* Position it near the top */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center it horizontally */
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    /* Green background */
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tick-icon {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Error Message Popup */
+.error-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:  #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    /* Initially hidden */
+    max-width: 90%;
+    text-align: center;
+    opacity: 0.90;
+}
+
+.error-notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    /* Position near the top */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center horizontally */
+    padding: 10px 15px;
+    background-color: #f44336;
+    /* Red background for errors */
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0.90;
+    transition: opacity 0.3s ease;
+}
+
+.error-icon {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Result Display */
+.result-display {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9f5e9;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+/* Styling for pre tags in results */
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ccc;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+
+
+/* Style the datalist container */
+datalist {
+    max-height: 150px;  /* Set a maximum height */
+    overflow-y: auto;   /* Add vertical scrolling if the list exceeds the max-height */
+    width: 100%;        /* Ensure the datalist takes up full width of the input */
+    position: absolute; /* Positioning to make it appear just below the input field */
+    z-index: 999;       /* Ensure it appears on top of other elements */
+}
+
+/* Optional: Style for the input field for better appearance */
+input[type="text"], textarea {
+    position: relative; /* Ensure proper positioning for the datalist */
+}
+
+/* Optional: Style for individual options within the datalist */
+datalist option {
+    padding: 5px 10px;  /* Add some padding to options */
+    font-size: 14px;     /* Control font size */
+    cursor: pointer;    /* Change cursor to indicate selectable items */
+}
+
+/* Ensure the datalist options are within the bounds of the input field */
+.floating-label-container {
+    position: relative;
+}

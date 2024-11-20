@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenroad CP</title>
+    <link rel="icon" type="image/x-icon" href="images/logo4.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+            <!-- Form Container -->
+            <div class="form-container">
+
+                <!-- Section 1: Input Fields -->
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <input type="text" id="bl" class="form-control" title="Bill of Lading" placeholder=" " required
+                            list="bl-suggestions">
+                        <label for="bl">BL</label>
+                        <datalist id="bl-suggestions">
+                            <!-- Suggestions will be added dynamically -->
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <input type="text" id="job" class="form-control" title="Job Number" placeholder=" " required
+                            list="job-suggestions">
+                        <label for="job">Job No</label>
+                        <datalist id="job-suggestions">
+                            <!-- Suggestions will be added dynamically -->
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <input type="text" id="client" class="form-control" title="Consignee Name" placeholder=" "
+                            required list="client-suggestions">
+                        <label for="client">Client</label>
+                        <datalist id="client-suggestions">
+                            <!-- Suggestions will be added dynamically -->
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <input type="text" id="app" class="form-control" title="CP Number" placeholder=" " required>
+                        <label for="app">Application No</label>
+                    </div>
+                </div>
+
+                <!-- Section 2: More Fields -->
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <textarea id="desc" class="form-control large-text" title="Describe the reason" placeholder=" "
+                            required></textarea>
+                        <label for="desc">Description</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <input type="text" id="invoice" class="form-control" title="Invoice Company" placeholder=" "
+                            required list="invoice-suggestions">
+                        <label for="invoice">Invoiced By</label>
+                        <datalist id="invoice-suggestions">
+                            <!-- Suggestions will be added dynamically -->
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label-container">
+                        <input type="text" id="total" class="form-control" title="Total Amount" placeholder=" "
+                            required>
+                        <label for="total">Total</label>
+                    </div>
+                </div>
+               
+
+                <div class="form-group">
+
+                    <!-- Searchable Dropdown for Currency Selection -->
+                    <input type="text" id="currency-search" class="dropdown-search" title="Currency"
+                        placeholder="Search for a currency...">
+
+                    <div id="currency-dropdown" class="dropdown-list">
+                        <!-- Start with USD and KES -->
+                        <div class="currency-option" data-value="USD">USD - United States Dollar</div>
+                        <div class="currency-option" data-value="KES">KES - Kenyan Shilling</div>
+
+                        <!-- Other world currencies in alphabetical order -->
+
+                        <div class="currency-option" data-value="AED">AED - United Arab Emirates Dirham</div>
+                        <div class="currency-option" data-value="AFN">AFN - Afghan Afghani</div>
+                        <div class="currency-option" data-value="ALL">ALL - Albanian Lek</div>
+                        <div class="currency-option" data-value="AMD">AMD - Armenian Dram</div>
+                        <div class="currency-option" data-value="ANG">ANG - Netherlands Antillean Guilder</div>
+                        <div class="currency-option" data-value="AOA">AOA - Angolan Kwanza</div>
+                        <div class="currency-option" data-value="ARS">ARS - Argentine Peso</div>
+                        <div class="currency-option" data-value="AUD">AUD - Australian Dollar</div>
+                        <div class="currency-option" data-value="AWG">AWG - Aruban Florin</div>
+                        <div class="currency-option" data-value="AZN">AZN - Azerbaijani Manat</div>
+                        <div class="currency-option" data-value="BAM">BAM - Bosnia and Herzegovina Convertible Mark
+                        </div>
+                        <div class="currency-option" data-value="BBD">BBD - Barbadian Dollar</div>
+                        <div class="currency-option" data-value="BDT">BDT - Bangladeshi Taka</div>
+                        <div class="currency-option" data-value="BGN">BGN - Bulgarian Lev</div>
+                        <div class="currency-option" data-value="BHD">BHD - Bahraini Dinar</div>
+                        <div class="currency-option" data-value="BIF">BIF - Burundian Franc</div>
+                        <div class="currency-option" data-value="BMD">BMD - Bermudian Dollar</div>
+                        <div class="currency-option" data-value="BND">BND - Brunei Dollar</div>
+                        <div class="currency-option" data-value="BOB">BOB - Bolivian Boliviano</div>
+                        <div class="currency-option" data-value="BRL">BRL - Brazilian Real</div>
+                        <div class="currency-option" data-value="BSD">BSD - Bahamian Dollar</div>
+                        <div class="currency-option" data-value="BTN">BTN - Bhutanese Ngultrum</div>
+                        <div class="currency-option" data-value="BWP">BWP - Botswana Pula</div>
+                        <div class="currency-option" data-value="BYN">BYN - Belarusian Ruble</div>
+                        <div class="currency-option" data-value="BZD">BZD - Belize Dollar</div>
+                        <div class="currency-option" data-value="CAD">CAD - Canadian Dollar</div>
+                        <div class="currency-option" data-value="CDF">CDF - Congolese Franc</div>
+                        <div class="currency-option" data-value="CHF">CHF - Swiss Franc</div>
+                        <div class="currency-option" data-value="CLP">CLP - Chilean Peso</div>
+                        <div class="currency-option" data-value="CNY">CNY - Chinese Yuan</div>
+                        <div class="currency-option" data-value="COP">COP - Colombian Peso</div>
+                        <div class="currency-option" data-value="CRC">CRC - Costa Rican Colón</div>
+                        <div class="currency-option" data-value="CUP">CUP - Cuban Peso</div>
+                        <div class="currency-option" data-value="CVE">CVE - Cape Verdean Escudo</div>
+                        <div class="currency-option" data-value="CZK">CZK - Czech Koruna</div>
+                        <div class="currency-option" data-value="DJF">DJF - Djiboutian Franc</div>
+                        <div class="currency-option" data-value="DKK">DKK - Danish Krone</div>
+                        <div class="currency-option" data-value="DOP">DOP - Dominican Peso</div>
+                        <div class="currency-option" data-value="DZD">DZD - Algerian Dinar</div>
+                        <div class="currency-option" data-value="EGP">EGP - Egyptian Pound</div>
+                        <div class="currency-option" data-value="ERN">ERN - Eritrean Nakfa</div>
+                        <div class="currency-option" data-value="ETB">ETB - Ethiopian Birr</div>
+                        <div class="currency-option" data-value="EUR">EUR - Euro</div>
+                        <div class="currency-option" data-value="FJD">FJD - Fijian Dollar</div>
+                        <div class="currency-option" data-value="FKP">FKP - Falkland Islands Pound</div>
+                        <div class="currency-option" data-value="FOK">FOK - Faroese Króna</div>
+                        <div class="currency-option" data-value="GBP">GBP - British Pound Sterling</div>
+                        <div class="currency-option" data-value="GEL">GEL - Georgian Lari</div>
+                        <div class="currency-option" data-value="GGP">GGP - Guernsey Pound</div>
+                        <div class="currency-option" data-value="GHS">GHS - Ghanaian Cedi</div>
+                        <div class="currency-option" data-value="GIP">GIP - Gibraltar Pound</div>
+                        <div class="currency-option" data-value="GMD">GMD - Gambian Dalasi</div>
+                        <div class="currency-option" data-value="GNF">GNF - Guinean Franc</div>
+                        <div class="currency-option" data-value="GTQ">GTQ - Guatemalan Quetzal</div>
+                        <div class="currency-option" data-value="GYD">GYD - Guyanese Dollar</div>
+                        <div class="currency-option" data-value="HKD">HKD - Hong Kong Dollar</div>
+                        <div class="currency-option" data-value="HNL">HNL - Honduran Lempira</div>
+                        <div class="currency-option" data-value="HRK">HRK - Croatian Kuna</div>
+                        <div class="currency-option" data-value="HTG">HTG - Haitian Gourde</div>
+                        <div class="currency-option" data-value="HUF">HUF - Hungarian Forint</div>
+                        <div class="currency-option" data-value="IDR">IDR - Indonesian Rupiah</div>
+                        <div class="currency-option" data-value="ILS">ILS - Israeli New Shekel</div>
+                        <div class="currency-option" data-value="IMP">IMP - Isle of Man Pound</div>
+                        <div class="currency-option" data-value="INR">INR - Indian Rupee</div>
+                        <div class="currency-option" data-value="IQD">IQD - Iraqi Dinar</div>
+                        <div class="currency-option" data-value="IRR">IRR - Iranian Rial</div>
+                        <div class="currency-option" data-value="ISK">ISK - Icelandic Króna</div>
+                        <div class="currency-option" data-value="JEP">JEP - Jersey Pound</div>
+                        <div class="currency-option" data-value="JMD">JMD - Jamaican Dollar</div>
+                        <div class="currency-option" data-value="JOD">JOD - Jordanian Dinar</div>
+                        <div class="currency-option" data-value="JPY">JPY - Japanese Yen</div>
+
+                        <div class="currency-option" data-value="KGS">KGS - Kyrgyzstani Som</div>
+                        <div class="currency-option" data-value="KHR">KHR - Cambodian Riel</div>
+                        <div class="currency-option" data-value="KMF">KMF - Comorian Franc</div>
+                        <div class="currency-option" data-value="KPW">KPW - North Korean Won</div>
+                        <div class="currency-option" data-value="KRW">KRW - South Korean Won</div>
+                        <div class="currency-option" data-value="KWD">KWD - Kuwaiti Dinar</div>
+                        <div class="currency-option" data-value="KYD">KYD - Cayman Islands Dollar</div>
+                        <div class="currency-option" data-value="KZT">KZT - Kazakhstani Tenge</div>
+                        <div class="currency-option" data-value="LAK">LAK - Lao Kip</div>
+                        <div class="currency-option" data-value="LBP">LBP - Lebanese Pound</div>
+                        <div class="currency-option" data-value="LKR">LKR - Sri Lankan Rupee</div>
+                        <div class="currency-option" data-value="LRD">LRD - Liberian Dollar</div>
+                        <div class="currency-option" data-value="LSL">LSL - Lesotho Loti</div>
+                        <div class="currency-option" data-value="LYD">LYD - Libyan Dinar</div>
+                        <div class="currency-option" data-value="MAD">MAD - Moroccan Dirham</div>
+                        <div class="currency-option" data-value="MDL">MDL - Moldovan Leu</div>
+                        <div class="currency-option" data-value="MGA">MGA - Malagasy Ariary</div>
+                        <div class="currency-option" data-value="MKD">MKD - Macedonian Denar</div>
+                        <div class="currency-option" data-value="MMK">MMK - Myanmar Kyat</div>
+                        <div class="currency-option" data-value="MNT">MNT - Mongolian Tögrög</div>
+                        <div class="currency-option" data-value="MOP">MOP - Macanese Pataca</div>
+                        <div class="currency-option" data-value="MUR">MUR - Mauritian Rupee</div>
+                        <div class="currency-option" data-value="MVR">MVR - Maldivian Rufiyaa</div>
+                        <div class="currency-option" data-value="MWK">MWK - Malawian Kwacha</div>
+                        <div class="currency-option" data-value="MXN">MXN - Mexican Peso</div>
+                        <div class="currency-option" data-value="MYR">MYR - Malaysian Ringgit</div>
+                        <div class="currency-option" data-value="MZN">MZN - Mozambican Metical</div>
+                        <div class="currency-option" data-value="NAD">NAD - Namibian Dollar</div>
+                        <div class="currency-option" data-value="NGN">NGN - Nigerian Naira</div>
+                        <div class="currency-option" data-value="NIO">NIO - Nicaraguan Córdoba</div>
+                        <div class="currency-option" data-value="NOK">NOK - Norwegian Krone</div>
+                        <div class="currency-option" data-value="NPR">NPR - Nepalese Rupee</div>
+                        <div class="currency-option" data-value="NZD">NZD - New Zealand Dollar</div>
+                        <div class="currency-option" data-value="OMR">OMR - Omani Rial</div>
+                        <div class="currency-option" data-value="PAB">PAB - Panamanian Balboa</div>
+                        <div class="currency-option" data-value="PEN">PEN - Peruvian Nuevo Sol</div>
+                        <div class="currency-option" data-value="PGK">PGK - Papua New Guinean Kina</div>
+                        <div class="currency-option" data-value="PHP">PHP - Philippine Peso</div>
+                        <div class="currency-option" data-value="PKR">PKR - Pakistani Rupee</div>
+                        <div class="currency-option" data-value="PLN">PLN - Polish Zloty</div>
+                        <div class="currency-option" data-value="PYG">PYG - Paraguayan Guaraní</div>
+                        <div class="currency-option" data-value="QAR">QAR - Qatari Riyal</div>
+                        <div class="currency-option" data-value="RON">RON - Romanian Leu</div>
+                        <div class="currency-option" data-value="RSD">RSD - Serbian Dinar</div>
+                        <div class="currency-option" data-value="RUB">RUB - Russian Ruble</div>
+                        <div class="currency-option" data-value="RWF">RWF - Rwandan Franc</div>
+                        <div class="currency-option" data-value="SAR">SAR - Saudi Riyal</div>
+                        <div class="currency-option" data-value="SBD">SBD - Solomon Islands Dollar</div>
+                        <div class="currency-option" data-value="SCR">SCR - Seychellois Rupee</div>
+                        <div class="currency-option" data-value="SDG">SDG - Sudanese Pound</div>
+                        <div class="currency-option" data-value="SEK">SEK - Swedish Krona</div>
+                        <div class="currency-option" data-value="SGD">SGD - Singapore Dollar</div>
+                        <div class="currency-option" data-value="SHP">SHP - Saint Helena Pound</div>
+                        <div class="currency-option" data-value="SLL">SLL - Sierra Leonean Leone</div>
+                        <div class="currency-option" data-value="SOS">SOS - Somali Shilling</div>
+                        <div class="currency-option" data-value="SRD">SRD - Surinamese Dollar</div>
+                        <div class="currency-option" data-value="SSP">SSP - South Sudanese Pound</div>
+                        <div class="currency-option" data-value="STN">STN - São Tomé and Príncipe Dobra</div>
+                        <div class="currency-option" data-value="SYP">SYP - Syrian Pound</div>
+                        <div class="currency-option" data-value="SZL">SZL - Eswatini Lilangeni</div>
+                        <div class="currency-option" data-value="THB">THB - Thai Baht</div>
+                        <div class="currency-option" data-value="TJS">TJS - Tajikistani Somoni</div>
+                        <div class="currency-option" data-value="TMT">TMT - Turkmenistani Manat</div>
+                        <div class="currency-option" data-value="TND">TND - Tunisian Dinar</div>
+                        <div class="currency-option" data-value="TOP">TOP - Tongan Paʻanga</div>
+                        <div class="currency-option" data-value="TRY">TRY - Turkish Lira</div>
+                        <div class="currency-option" data-value="TTD">TTD - Trinidad and Tobago Dollar</div>
+                        <div class="currency-option" data-value="TVD">TVD - Tuvaluan Dollar</div>
+                        <div class="currency-option" data-value="TWD">TWD - New Taiwan Dollar</div>
+                        <div class="currency-option" data-value="TZS">TZS - Tanzanian Shilling</div>
+                        <div class="currency-option" data-value="UAH">UAH - Ukrainian Hryvnia</div>
+                        <div class="currency-option" data-value="UGX">UGX - Ugandan Shilling</div>
+
+                        <div class="currency-option" data-value="UYU">UYU - Uruguayan Peso</div>
+                        <div class="currency-option" data-value="UZS">UZS - Uzbekistani Soʻm</div>
+                        <div class="currency-option" data-value="VES">VES - Venezuelan Bolívar</div>
+                        <div class="currency-option" data-value="VND">VND - Vietnamese Đồng</div>
+                        <div class="currency-option" data-value="VUV">VUV - Vanuatu Vatu</div>
+                        <div class="currency-option" data-value="WST">WST - Samoan Tālā</div>
+                        <div class="currency-option" data-value="XAF">XAF - Central African CFA Franc</div>
+                        <div class="currency-option" data-value="XCD">XCD - East Caribbean Dollar</div>
+                        <div class="currency-option" data-value="XOF">XOF - West African CFA Franc</div>
+                        <div class="currency-option" data-value="XPF">XPF - CFP Franc</div>
+                        <div class="currency-option" data-value="YER">YER - Yemeni Rial</div>
+                        <div class="currency-option" data-value="ZAR">ZAR - South African Rand</div>
+                        <div class="currency-option" data-value="ZMW">ZMW - Zambian Kwacha</div>
+                        <div class="currency-option" data-value="ZWL">ZWL - Zimbabwean Dollar</div>
+
+                        <!-- Add more options as needed -->
+                    </div>
+
+                    <input type="hidden" id="currency" name="currency">
+                    <!-- Hidden field to store the selected currency -->
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="right">
+            
+
+            <!-- Buttons Section -->
+            <div class="button-grid">
+
+
+                <div class="dropdown">
+                    <button id="dropdown-btn" class="dropdown-btn" title="tag officials">
+                        Tag officials to approve <span class="dropdown-arrow">▼</span> <!-- Add arrow icon here -->
+                    </button>
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <label><input type="checkbox" name="person" value="ophelia徐" checked> ophelia徐</label>
+                        <label><input type="checkbox" name="person" value="Greenroad Annie"> Greenroad Annie</label>
+                        <label><input type="checkbox" name="person" value="Allen-格林福德国际物流"> Allen-格林福德国际物流</label>
+                        <label><input type="checkbox" name="person" value="Mac"> Mac</label>
+                        <label><input type="checkbox" name="person" value="isaac"> isaac</label>
+                        <label><input type="checkbox" name="person" value="Liuke_UG"> Liuke_UG</label>
+                        <label><input type="checkbox" name="person" value="林方志"> 林方志</label>
+                        <label><input type="checkbox" name="person" value="冀慎珂"> 冀慎珂</label>
+                        <label><input type="checkbox" name="person" value="格林福德SS 张雷"> 格林福德SS 张雷</label>
+                        <button id="done-btn" class="done-btn">Done</button>
+                    </div>
+                </div>
+    
+                <!-- Sales Personnel Dropdown (New) -->
+                <div class="dropdown" style="display: inline-block; margin-left: 10px;">
+                    <button id="sales-dropdown-btn" class="dropdown-btn" title="select sales personnel">
+                        Select Sales Personnel <span class="sales-dropdown-arrow">▼</span> <!-- Sales-specific arrow -->
+                    </button>
+                    <div id="sales-dropdown-menu" class="dropdown-menu" style="display: none;">
+                        <label><input type="checkbox" name="sales" value="Isaac">Isaac Xiang</label>
+                        <label><input type="checkbox" name="sales" value="Daisy">Daisy Dang</label>
+                        <label><input type="checkbox" name="sales" value="Rosa">Rosa Njuguna</label>
+                        <label><input type="checkbox" name="sales" value="Johnny">Johnny_zhang</label>
+                        <label><input type="checkbox" name="sales" value="Johnny">Erick_Zhang</label>
+                        <button id="done-sales-btn" class="done-btn">Done</button>
+                    </div>
+                </div>             
+                
+                
+                <button id="generate-btn" class="action-btn" title="generate the message">
+                    <i class="fas fa-play"></i>
+                    Generate
+                </button>
+                <button id="clear-btn" class="action-btn" title="clear all fields">
+                    <i class="fas fa-eraser"></i>
+                    Clear
+                </button>
+                <button id="save-btn" class="action-btn" title="save the message to a file">
+                    <i class="fas fa-save"></i>
+                    Save
+                </button>
+                <button id="copy-btn" class="action-btn" title="copy the message to clipboard">
+                    <i class="fas fa-copy"></i>
+                    Copy
+                </button>
+            </div>
+
+
+            <div id="notification" class="notification" style="display: none;">
+                <span class="tick-icon">✔</span> Copied, post now for approval
+            </div>
+
+            <!-- Error Message Popup -->
+            <div id="error-message" class="error-popup" style="display: none;">
+                Fill required fields first!
+            </div>
+
+            <div id="error-notification" class="error-notification" style="display: none;">
+                <span class="error-icon">✘</span> Generate first to copy!
+            </div>
+
+            <div id="save-error-notification" class="error-notification" style="display: none;">
+                <span class="error-icon">✘</span> Generate first to save!
+            </div>
+
+            <!-- Section 5: Result Display -->
+            <h3>Generated Message:</h3>
+            <pre id="result"></pre>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
