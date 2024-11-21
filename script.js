@@ -197,9 +197,6 @@ document.querySelectorAll('input[name="sales"]').forEach((checkbox) => {
 });
 
 
-
-
-
 // Handle Generate button click
 document.getElementById('generate-btn').addEventListener('click', () => {
     const requiredFields = ['job', 'client', 'app', 'desc', 'total', 'currency-search']; // List of required fields
@@ -310,7 +307,7 @@ document.getElementById('clear-btn').addEventListener('click', () => {
     }
 });
 
-
+// Save btn function"
 document.getElementById('save-btn').addEventListener('click', () => {
     const message = document.getElementById('result').textContent;
     if (!message) {
@@ -380,10 +377,14 @@ document.getElementById('copy-btn').addEventListener('click', () => {
     });
 });
 
+
+// Currency dropdown fucntion
+
 // Show the dropdown list when the user starts typing in the search field
 document.getElementById('currency-search').addEventListener('focus', () => {
     document.getElementById('currency-dropdown').classList.add('open');
 });
+
 
 // Hide the dropdown list when the user clicks outside
 document.addEventListener('click', (e) => {
