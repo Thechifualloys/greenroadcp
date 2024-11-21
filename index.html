@@ -63,7 +63,6 @@
                     </div>
                 </div>
 
-                <!-- Section 2: More Fields -->
                 <div class="form-group">
                     <div class="floating-label-container">
                         <textarea id="desc" class="form-control large-text" title="Describe the reason" placeholder=" "
@@ -104,7 +103,6 @@
                         <div class="currency-option" data-value="KES">KES - Kenyan Shilling</div>
 
                         <!-- Other world currencies in alphabetical order -->
-
                         <div class="currency-option" data-value="AED">AED - United Arab Emirates Dirham</div>
                         <div class="currency-option" data-value="AFN">AFN - Afghan Afghani</div>
                         <div class="currency-option" data-value="ALL">ALL - Albanian Lek</div>
@@ -177,7 +175,6 @@
                         <div class="currency-option" data-value="JMD">JMD - Jamaican Dollar</div>
                         <div class="currency-option" data-value="JOD">JOD - Jordanian Dinar</div>
                         <div class="currency-option" data-value="JPY">JPY - Japanese Yen</div>
-
                         <div class="currency-option" data-value="KGS">KGS - Kyrgyzstani Som</div>
                         <div class="currency-option" data-value="KHR">KHR - Cambodian Riel</div>
                         <div class="currency-option" data-value="KMF">KMF - Comorian Franc</div>
@@ -266,7 +263,7 @@
                         <div class="currency-option" data-value="ZMW">ZMW - Zambian Kwacha</div>
                         <div class="currency-option" data-value="ZWL">ZWL - Zimbabwean Dollar</div>
 
-                        <!-- Add more options as needed -->
+                        <!-- more option to be added -->
                     </div>
 
                     <input type="hidden" id="currency" name="currency">
@@ -282,12 +279,13 @@
             
 
             <!-- Buttons Section -->
-            <div class="button-grid">
-
+            <div class="button-grid">  
+                
+                <!-- officials to approve -->
 
                 <div class="dropdown">
                     <button id="dropdown-btn" class="dropdown-btn" title="tag officials">
-                        Tag officials to approve <span class="dropdown-arrow">▼</span> <!-- Add arrow icon here -->
+                        Tag officials to approve <span class="dropdown-arrow">▼</span>
                     </button>
                     <div id="dropdown-menu" class="dropdown-menu">
                         <label><input type="checkbox" name="person" value="ophelia徐" checked> ophelia徐</label>
@@ -303,7 +301,7 @@
                     </div>
                 </div>
     
-                <!-- Sales Personnel Dropdown (New) -->
+                <!-- Sales Personnel  -->
                 <div class="dropdown" style="display: inline-block; margin-left: 10px;">
                     <button id="sales-dropdown-btn" class="dropdown-btn" title="select sales personnel">
                         Select Sales Personnel <span class="sales-dropdown-arrow">▼</span> <!-- Sales-specific arrow -->
@@ -318,7 +316,9 @@
                         <button id="done-sales-btn" class="done-btn">Done</button>
                     </div>
                 </div>             
-                
+
+
+                <!-- Action btns  -->
                 
                 <button id="generate-btn" class="action-btn" title="generate the message">
                     <i class="fas fa-play"></i>
@@ -338,12 +338,13 @@
                 </button>
             </div>
 
-
+             <!-- Notification pop ups -->
+            
             <div id="notification" class="notification" style="display: none;">
                 <span class="tick-icon">✔</span> Copied, post now for approval
             </div>
 
-            <!-- Error Message Popup -->
+           
             <div id="error-message" class="error-popup" style="display: none;">
                 Fill required fields first!
             </div>
@@ -356,7 +357,7 @@
                 <span class="error-icon">✘</span> Generate first to save!
             </div>
 
-            <!-- Section 5: Result Display -->
+            <!--Result Display -->
             <h3>Generated Message:</h3>
             <pre id="result"></pre>
         </div>
