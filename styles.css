@@ -19,48 +19,38 @@ body {
 .container {
     display: flex;
     justify-content: space-between;
-    /* Space out the two sections */
     gap: 20px;
 }
 
 /* Style the left section */
 .left {
     flex: 1;
-    /* Left section takes up 50% or more of the container */
     padding: 20px;
     background-color: #f0f0f0;
-    /* Optional: Set a background */
     opacity: 0.962;
 }
 
 /* Style the right section */
 .right {
     flex: 1;
-    /* Right section takes up 50% or more of the container */
     padding: 20px;
     background-color: #e0e0e0;
-    /* Optional: Set a background */
     opacity: 0.85;
     
 }
 
-/* Optional: Add some responsiveness */
+/* Adding some responsiveness */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        /* Stack sections on top of each other on smaller screens */
     }
 }
 
 .form-image {
     width: 100%;
-    /* Makes the image fit the container's width */
     height: auto;
-    /* Maintains aspect ratio */
     border-radius: 8px;
-    /* Optional: to match the container’s rounded corners */
     margin-bottom: 20px;
-    /* Adds space between image and header */
 }
 
 /* Header */
@@ -108,9 +98,7 @@ h3 {
 /* Style for Larger Text Area */
 .large-text {
     min-height: 90px;
-    /* Makes description field larger */
     resize: vertical;
-    /* Allows users to adjust height */
 }
 
 /* Input Focus Effects */
@@ -154,24 +142,20 @@ h3 {
 .dropdown-arrow {
     display: inline-block;
     transition: transform 0.3s ease;
-    /* Add a smooth transition effect */
 }
 
 .dropdown-menu {
     display: none;
-    /* Hide the dropdown menu initially */
     max-width: 300px;
 }
 
 .dropdown-menu.show {
     display: block;
-    /* Show the dropdown menu when the "show" class is added */
 }
 
 /* Rotate the arrow when the dropdown is open */
 .dropdown-arrow.rotate {
     transform: rotate(180deg);
-    /* Rotate 180 degrees */
 }
 
 
@@ -213,7 +197,6 @@ h3 {
 
 .dropdown-list {
     display: none;
-    /* Hidden by default */
     position: absolute;
     width: 30%;
     background-color: #ffffff;
@@ -235,7 +218,7 @@ h3 {
 /* Remove focus outline */
 #currency-search:focus {
     outline: none;
-    border: 1px solid #ccc; /* Optional: add a custom border style if you prefer */
+    border: 1px solid #ccc; 
 }
 
 
@@ -254,7 +237,6 @@ h3 {
     border-radius: 4px;
     cursor: pointer;
     display: none;
-    /* Initially hidden */
 }
 
 /* Optional: Add hover effect to the Done button */
@@ -309,21 +291,21 @@ h3 {
 
 /* Ensure dropdown menu is large enough to fit all options */
 #sales-dropdown-menu {
-    display: none; /* Initially hidden */
+    display: none; 
     position: absolute;
     background-color: white;
     border: 1px solid #ccc;
     padding: 10px;
     z-index: 100;
-    min-width: 200px; /* Ensure the dropdown has a min-width */
-    max-height: auto; /* Limit the height to avoid long dropdowns */
-    overflow-y: auto; /* Enable scrolling if options overflow */
+    min-width: 200px; 
+    max-height: auto; 
+    overflow-y: auto;
 }
 
 /* Space out the items a little more */
 #sales-dropdown-menu label {
     display: block;
-    margin-bottom: 8px; /* Add space between each option */
+    margin-bottom: 8px; 
 }
 
 /* Ensure the "Done" button is at the bottom */
@@ -337,7 +319,7 @@ h3 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 12px; /* Add space between options and the Done button */
+    margin-top: 12px; 
 }
 
 /* Style the button when hovered */
@@ -354,29 +336,30 @@ h3 {
     color: white;
     border: none;
     border-radius: 4px;
-    margin-right: 10px; /* Space between this and the next element */
+    margin-right: 10px; 
     opacity: 0.9;
 }
 
 #sales-dropdown-btn:hover {
-    background-color: #19561c; /* Darker green color on hover */
+    background-color: #19561c; 
 }
+
 /* Initial state of the sales dropdown arrow (down) */
 .sales-dropdown-arrow {
-    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    transition: transform 0.3s ease; 
 }
 
 /* Rotate the sales arrow when the sales dropdown menu is shown */
 #sales-dropdown-btn.open .sales-dropdown-arrow {
-    transform: rotate(180deg); /* Rotate arrow 180 degrees */
+    transform: rotate(180deg); 
 }
 
 #sales-dropdown-menu {
-    background-color: white; /* Slightly transparent black */
+    background-color: white;
     opacity: 0.93;
-    padding: 10px; /* Optional: Add some padding for better spacing */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow for better visibility */
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -389,13 +372,10 @@ h3 {
     justify-content: center;
     position: fixed;
     top: 20px;
-    /* Position it near the top */
     left: 50%;
     transform: translateX(-50%);
-    /* Center it horizontally */
     padding: 10px 15px;
     background-color: #4CAF50;
-    /* Green background */
     color: #fff;
     font-size: 14px;
     border-radius: 5px;
@@ -425,7 +405,6 @@ h3 {
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none;
-    /* Initially hidden */
     max-width: 90%;
     text-align: center;
     opacity: 0.90;
@@ -437,13 +416,10 @@ h3 {
     justify-content: center;
     position: fixed;
     top: 20px;
-    /* Position near the top */
     left: 50%;
     transform: translateX(-50%);
-    /* Center horizontally */
     padding: 10px 15px;
     background-color: #f44336;
-    /* Red background for errors */
     color: #fff;
     font-size: 14px;
     border-radius: 5px;
@@ -485,23 +461,23 @@ pre {
 
 /* Style the datalist container */
 datalist {
-    max-height: 150px;  /* Set a maximum height */
-    overflow-y: auto;   /* Add vertical scrolling if the list exceeds the max-height */
-    width: 100%;        /* Ensure the datalist takes up full width of the input */
-    position: absolute; /* Positioning to make it appear just below the input field */
-    z-index: 999;       /* Ensure it appears on top of other elements */
+    max-height: 150px; 
+    overflow-y: auto;   
+    width: 100%;    
+    position: absolute; 
+    z-index: 999;    
 }
 
 /* Optional: Style for the input field for better appearance */
 input[type="text"], textarea {
-    position: relative; /* Ensure proper positioning for the datalist */
+    position: relative;
 }
 
 /* Optional: Style for individual options within the datalist */
 datalist option {
-    padding: 5px 10px;  /* Add some padding to options */
-    font-size: 14px;     /* Control font size */
-    cursor: pointer;    /* Change cursor to indicate selectable items */
+    padding: 5px 10px;  
+    font-size: 14px;   
+    cursor: pointer;  
 }
 
 /* Ensure the datalist options are within the bounds of the input field */
