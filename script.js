@@ -1,6 +1,6 @@
 // Define the dropdownArrow and isDropdownVisible variables
 const dropdownArrow = document.querySelector('.dropdown-arrow');
-let isDropdownVisible = false; // Track the dropdown visibility state
+let isDropdownVisible = false; 
 
 // Toggle dropdown menu visibility and rotate the arrow
 document.getElementById('dropdown-btn').addEventListener('click', () => {
@@ -25,7 +25,7 @@ document.getElementById('dropdown-btn').addEventListener('click', () => {
 });
 
 // Handle checkbox selection for tagging multiple people
-const selectedPeople = new Set(['ophelia徐']); // Ophelia selected by default
+const selectedPeople = new Set(['ophelia徐']); 
 
 document.querySelectorAll('#dropdown-menu input[name="person"]').forEach(checkbox => {
     checkbox.addEventListener('change', (event) => {
@@ -61,7 +61,7 @@ document.getElementById('done-btn').addEventListener('click', () => {
 
     // Reset the arrow rotation
     dropdownArrow.style.transform = 'rotate(0deg)';
-    isDropdownVisible = false; // Reset the visibility state
+    isDropdownVisible = false; 
 });
 
 // Function to highlight empty required fields in red
@@ -85,7 +85,7 @@ function highlightEmptyFields(fields) {
 function showError(message) {
     const errorPopup = document.getElementById('error-message');
     errorPopup.textContent = message;
-    errorPopup.style.display = 'block'; // Show the error popup
+    errorPopup.style.display = 'block'; 
 
     // Hide the popup after 3 seconds
     setTimeout(() => {
@@ -99,7 +99,7 @@ document.getElementById('total').addEventListener('input', function (event) {
     let value = event.target.value;
 
     // Keep only valid characters: digits, commas, and a single decimal point
-    const numericPart = value.replace(/[^0-9,.]/g, ''); // Allow only digits, commas, and period
+    const numericPart = value.replace(/[^0-9,.]/g, ''); 
     const parts = numericPart.split('.');
 
     if (parts.length > 2) {
@@ -123,8 +123,8 @@ function formatNumberWithCommasAndPreserveDecimals(value) {
     // Check if the input contains decimals
     if (numericValue.includes('.')) {
         let [integerPart, decimalPart] = numericValue.split('.');
-        integerPart = parseInt(integerPart, 10).toLocaleString(); // Format the integer part with commas
-        return `${integerPart}.${decimalPart}`; // Preserve the user's decimal part
+        integerPart = parseInt(integerPart, 10).toLocaleString();
+        return `${integerPart}.${decimalPart}`; 
     } else {
         // No decimals, format with commas only
         return parseInt(numericValue, 10).toLocaleString();
@@ -135,7 +135,7 @@ function formatNumberWithCommasAndPreserveDecimals(value) {
 document.getElementById('sales-dropdown-btn')?.addEventListener('click', function () {
     const salesMenu = document.getElementById('sales-dropdown-menu');
     const salesDropdownBtn = document.getElementById('sales-dropdown-btn');
-    const salesArrow = salesDropdownBtn ? salesDropdownBtn.querySelector('.sales-dropdown-arrow') : null; // Get the sales dropdown arrow
+    const salesArrow = salesDropdownBtn ? salesDropdownBtn.querySelector('.sales-dropdown-arrow') : null; 
     const isVisible = salesMenu && salesMenu.style.display === 'block';
 
     // Toggle the dropdown menu visibility if elements are found
@@ -156,12 +156,12 @@ document.getElementById('sales-dropdown-btn')?.addEventListener('click', functio
 // Handle "Done" button click for sales personnel
 document.getElementById('done-sales-btn')?.addEventListener('click', function () {
     const salesMenu = document.getElementById('sales-dropdown-menu');
-    const selectedSales = document.querySelector('input[name="sales"]:checked'); // Get the selected checkbox
+    const selectedSales = document.querySelector('input[name="sales"]:checked'); 
 
 
     // Close the dropdown after selection, if the menu exists
     if (salesMenu) {
-        salesMenu.style.display = 'none'; // Hide the dropdown when Done is clicked
+        salesMenu.style.display = 'none';
     }
 
     // Reset the arrow rotation, if the dropdown button and arrow exist
@@ -178,7 +178,7 @@ document.querySelectorAll('input[name="sales"]').forEach((checkbox) => {
         if (checkbox.checked) {
             document.querySelectorAll('input[name="sales"]').forEach((otherCheckbox) => {
                 if (otherCheckbox !== checkbox) {
-                    otherCheckbox.checked = false; // Uncheck all other checkboxes
+                    otherCheckbox.checked = false; 
                 }
             });
         }
@@ -188,9 +188,9 @@ document.querySelectorAll('input[name="sales"]').forEach((checkbox) => {
         const salesButton = document.getElementById('sales-dropdown-btn');
         if (salesButton) {
             if (selectedSales) {
-                salesButton.textContent = `Selected Sales: ${selectedSales.value}`; // Show selected salesperson
+                salesButton.textContent = `Selected Sales: ${selectedSales.value}`; 
             } else {
-                salesButton.textContent = 'Select Sales Personnel'; // Default text if no sales is selected
+                salesButton.textContent = 'Select Sales Personnel'; 
             }
         }
     });
@@ -199,7 +199,7 @@ document.querySelectorAll('input[name="sales"]').forEach((checkbox) => {
 
 // Handle Generate button click
 document.getElementById('generate-btn').addEventListener('click', () => {
-    const requiredFields = ['job', 'client', 'app', 'desc', 'total', 'currency-search']; // List of required fields
+    const requiredFields = ['job', 'client', 'app', 'desc', 'total', 'currency-search']; 
 
     // Check if all required fields are filled
     if (!highlightEmptyFields(requiredFields)) {
@@ -218,7 +218,7 @@ document.getElementById('generate-btn').addEventListener('click', () => {
 
     // Get selected sales personnel
     const selectedSales = document.querySelector('input[name="sales"]:checked');
-    const salesName = selectedSales ? selectedSales.value : null; // If no sales personnel selected, it's null
+    const salesName = selectedSales ? selectedSales.value : null; 
 
     let message = '';
 
@@ -245,31 +245,28 @@ document.getElementById('generate-btn').addEventListener('click', () => {
 
     // Format the total field with commas and preserve decimals if provided
     if (total) {
-        total = formatNumberWithCommasAndPreserveDecimals(total); // Format total
-        message += `𝐓𝐎𝐓𝐀𝐋: ${currency} ${total}\n\n`; // Add one line break after the total
+        total = formatNumberWithCommasAndPreserveDecimals(total); 
+        message += `𝐓𝐎𝐓𝐀𝐋: ${currency} ${total}\n\n`; 
     }
 
     // Add sales personnel (on the next line after the total)
     if (salesName) {
-        message += `Sales Personnel: ${salesName}\n`; // Position sales below the total
+        message += `Sales Personnel: ${salesName}\n`; 
     }
 
     // Add tagged people (if any) right below the sales personnel
     const peopleTags = Array.from(selectedPeople)
         .map((person) => `@${person}`)
         .join(' ');
-    message += `${peopleTags} kindly help approve the attached application, Thanks..\n`; // No extra line before tags
+    message += `${peopleTags} kindly help approve the attached application, Thanks..\n`; 
 
     // Display the generated message in the result area
     document.getElementById('result').textContent = message;
 });
 
 
-
-
 // Clear fields function
 document.getElementById('clear-btn').addEventListener('click', () => {
-    // Clear all input fields
     document.getElementById('bl').value = '';
     document.getElementById('job').value = '';
     document.getElementById('client').value = '';
@@ -277,11 +274,12 @@ document.getElementById('clear-btn').addEventListener('click', () => {
     document.getElementById('desc').value = '';
     document.getElementById('invoice').value = '';
     document.getElementById('total').value = '';
-    document.getElementById('currency').value = 'KES';
+    document.getElementById('currency').value = '';  
+    document.getElementById('currency-search').value = ''; 
 
     // Reset dropdown selections
     selectedPeople.clear();
-    selectedPeople.add('ophelia徐'); // Set default to Ophelia
+    selectedPeople.add('ophelia徐'); 
     document.querySelectorAll('#dropdown-menu input[name="person"]').forEach(checkbox => checkbox.checked = checkbox.value === 'ophelia徐');
     document.getElementById('dropdown-btn').textContent = 'Selected (1) People';
 
@@ -307,6 +305,7 @@ document.getElementById('clear-btn').addEventListener('click', () => {
     }
 });
 
+
 // Save btn function"
 document.getElementById('save-btn').addEventListener('click', () => {
     const message = document.getElementById('result').textContent;
@@ -321,10 +320,10 @@ document.getElementById('save-btn').addEventListener('click', () => {
             saveErrorNotification.style.opacity = '0';
             setTimeout(() => {
                 saveErrorNotification.style.display = 'none';
-            }, 300); // Wait for the transition to complete
+            }, 300); 
         }, 3000);
 
-        return; // Exit the function to prevent further execution
+        return; 
     }
 
     // Save the message to a file
@@ -334,7 +333,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
     link.href = url;
     link.download = 'GeneratedMessage.txt';
     link.click();
-    URL.revokeObjectURL(url); // Clean up the URL object
+    URL.revokeObjectURL(url); 
 });
 
 
@@ -352,7 +351,7 @@ document.getElementById('copy-btn').addEventListener('click', () => {
             errorNotification.style.opacity = '0';
             setTimeout(() => {
                 errorNotification.style.display = 'none';
-            }, 300); // Wait for transition to complete
+            }, 300); 
         }, 3000);
 
         return;
@@ -369,7 +368,7 @@ document.getElementById('copy-btn').addEventListener('click', () => {
             notification.style.opacity = '0';
             setTimeout(() => {
                 notification.style.display = 'none';
-            }, 300); // Wait for the transition to complete
+            }, 300); 
         }, 3000);
     }).catch(err => {
         alert('Failed to copy message.');
@@ -404,9 +403,9 @@ document.getElementById('currency-search').addEventListener('input', () => {
     currencyOptions.forEach(option => {
         const optionText = option.textContent.toLowerCase();
         if (optionText.includes(searchValue)) {
-            option.style.display = ''; // Show matching options
+            option.style.display = ''; 
         } else {
-            option.style.display = 'none'; // Hide non-matching options
+            option.style.display = 'none'; 
         }
     });
 });
@@ -429,7 +428,7 @@ document.querySelectorAll('.currency-option').forEach(option => {
 // Function to update the datalist with saved values
 function updateDatalist(fieldId, savedValues) {
     const datalist = document.getElementById(fieldId);
-    datalist.innerHTML = ''; // Clear the current suggestions
+    datalist.innerHTML = ''; 
 
     savedValues.forEach(value => {
         const option = document.createElement('option');
