@@ -64,6 +64,7 @@ h3 {
 /* Form container stacked vertically */
 .form-container {
     display: block;
+    margin-top: 20px;
 }
 
 /* Basic Styling */
