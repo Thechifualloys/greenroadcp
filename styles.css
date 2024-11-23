@@ -26,6 +26,7 @@ body {
 .left {
     flex: 1;
     padding: 20px;
+    padding-top: 20px;
     background-color: #f0f0f0;
     opacity: 0.962;
     border-radius: 8px;
@@ -180,6 +181,7 @@ h3 {
     padding: 10px; 
     border-radius: 12px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+
 }
 
 .dropdown-menu label {
@@ -313,7 +315,6 @@ h3 {
     border-radius: 12px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
-
 
 /* Space out the items a little more */
 #sales-dropdown-menu label {
