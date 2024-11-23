@@ -28,6 +28,7 @@ body {
     padding: 20px;
     background-color: #f0f0f0;
     opacity: 0.962;
+    border-radius: 8px;
 }
 
 /* Style the right section */
@@ -36,6 +37,7 @@ body {
     padding: 20px;
     background-color: #e0e0e0;
     opacity: 0.85;
+    border-radius: 8px;
     
 }
 
@@ -164,14 +166,19 @@ h3 {
 }
 
 .dropdown-menu {
-    display: none;
+    display: none; 
     position: absolute;
     background-color: white;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 8px;
-    width: 100%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 100;
+    min-width: 200px; 
+    max-height: auto; 
+    overflow-y: auto;
+    opacity: 0.93;
+    padding: 10px; 
+    border-radius: 12px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .dropdown-menu label {
@@ -300,7 +307,12 @@ h3 {
     min-width: 200px; 
     max-height: auto; 
     overflow-y: auto;
+    opacity: 0.93;
+    padding: 10px; 
+    border-radius: 12px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
+
 
 /* Space out the items a little more */
 #sales-dropdown-menu label {
@@ -353,16 +365,6 @@ h3 {
 #sales-dropdown-btn.open .sales-dropdown-arrow {
     transform: rotate(180deg); 
 }
-
-#sales-dropdown-menu {
-    background-color: white;
-    opacity: 0.93;
-    padding: 10px; 
-    border-radius: 5px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-
 
 
 /* Notification styling */
